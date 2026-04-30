@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "vehicle-insurance",
+    "title": "Vehicle Insurance Fraud Detection",
+    "tagline": "Multi-agent ML pipeline for claim-level fraud probability",
+    "description": "LangGraph-orchestrated pipeline (preprocess → train → evaluate → select → infer → decide) over the Vehicle Insurance Fraud dataset. Three classifiers (LR / RF / XGBoost) with SMOTE on the training fold only; an OpenAI call turns the score into a plain-English explanation and a recommended action for the claims officer.",
+    "tags": ["LangGraph", "XGBoost", "SMOTE", "OpenAI", "Gradio"],
+    "video": {
+      "type": "mp4",
+      "src": "/videos/vehicle-insurance.mp4",
+      "poster": "/posters/vehicle-insurance.jpg"
+    },
+    "links": {
+      "github": "https://github.com/UtkarshTyagi23/Vehicle_Insurance",
+      "demo": null
+    }
+  },
+  {
+    "slug": "legal-contract-analysis",
+    "title": "LexScan — Legal Clause Intelligence",
+    "tagline": "Fine-tuned Legal-BERT classifier over 38 CUAD clause types",
+    "description": "Two-stage system: a fine-tuned Legal-BERT detects which contract clauses are present in an uploaded document with per-clause threshold tuning; GPT-4o-mini then locates the supporting excerpt, grades its risk for the user's party role, and explains it in plain English. Macro-F1 ≥ 0.70 on held-out CUAD contracts.",
+    "tags": ["Legal-BERT", "Transformers", "Flask", "GPT-4o-mini", "CUAD"],
+    "video": {
+      "type": "mp4",
+      "src": "/videos/legal-contract-analysis.mp4",
+      "poster": "/posters/legal-contract-analysis.jpg"
+    },
+    "links": {
+      "github": "https://github.com/UtkarshTyagi23/LegalContract_Analysis",
+      "demo": null
+    }
+  },
+  {
+    "slug": "shark-tank-analysis",
+    "title": "Shark Tank — Causal Analysis",
+    "tagline": "PSM + DiD on 17 seasons of Shark Tank US",
+    "description": "Two-notebook study: scrapes the out-of-business and acquisition lists, augments the base panel with Google Trends, then runs Propensity Score Matching, an event study around episode air date, and a PSM-DiD on the matched sample to isolate the incremental effect of receiving a deal — with placebo and exact-matching robustness.",
+    "tags": ["PSM", "Difference-in-Differences", "Event Study", "lifelines", "BeautifulSoup"],
+    "video": {
+      "type": "mp4",
+      "src": "/videos/shark-tank-analysis.mp4",
+      "poster": "/posters/shark-tank-analysis.jpg"
+    },
+    "links": {
+      "github": "https://github.com/UtkarshTyagi23/Shark_Tank_Analysis",
+      "demo": null
+    }
+  },
+  {
+    "slug": "fintech-agentic-kyc",
+    "title": "VerifyAI — Agentic KYC Onboarding",
+    "tagline": "Human-in-the-loop KYC pipeline driven by an autonomous agent",
+    "description": "A clickable single-page mockup of a four-screen agentic KYC flow. The agent runs OCR, authenticity, and sanctions/PEP checks autonomously, then pauses with a natural-language explanation and structured options for a compliance analyst when its confidence drops. Audit reference is recorded for every override.",
+    "tags": ["Agentic AI", "KYC", "Human-in-the-loop", "Tailwind", "Prototype"],
+    "video": {
+      "type": "mp4",
+      "src": "/videos/fintech-agentic-kyc.mp4",
+      "poster": "/posters/fintech-agentic-kyc.jpg"
+    },
+    "links": {
+      "github": "https://github.com/UtkarshTyagi23/Fintech_AgenticKyc",
+      "demo": null
+    }
+  }
+]

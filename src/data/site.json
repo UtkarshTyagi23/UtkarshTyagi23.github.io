@@ -1,0 +1,13 @@
+{
+  "name": "Utkarsh Tyagi",
+  "role": "ML & Data Science",
+  "tagline": "Building ML systems that turn messy real-world data into decisions people can act on.",
+  "about": "I work on applied ML and causal inference — multi-agent pipelines for fraud detection, transformer-based legal NLP, and quasi-experimental analysis of business outcomes. Currently focused on agentic systems that pair model predictions with LLM-generated explanations a non-technical user can actually use.",
+  "location": "Singapore",
+  "email": "utyagi2012@gmail.com",
+  "links": {
+    "github": "https://github.com/UtkarshTyagi23",
+    "linkedin": "https://www.linkedin.com/in/utkarsh-tyagi2305",
+    "substack": "https://utyagi.substack.com"
+  }
+}
