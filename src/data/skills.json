@@ -34,7 +34,7 @@
       ]
     },
     {
-      "label": "Coursework",
+      "label": "Certificates",
       "items": [
         "Agentic AI — Andrew Ng (multi-agent, MCP, evals)",
         "RAG Systems — Zain Hassan (hybrid search, Weaviate)"

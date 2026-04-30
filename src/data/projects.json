@@ -68,19 +68,5 @@
       "github": "https://github.com/UtkarshTyagi23/Shark_Tank_Analysis",
       "demo": null
     }
-  },
-  {
-    "slug": "tour-de-france",
-    "title": "Tour de France 2025 — Data Modelling & Tableau Dashboards",
-    "tagline": "PostgreSQL schema + 7 OLAP-style Tableau dashboards over the 2025 race",
-    "pullquote": "End-to-end DB project: ER diagram → normalized PostgreSQL → star-schema variant for analytics — with Tableau dashboards surfacing rider, team, and national-level patterns.",
-    "description": "End-to-end data modelling project for the Tour de France 2025. Started from an ER diagram capturing every entity and constraint in the race domain, translated it into a normalized 7-table PostgreSQL schema (Country, Location, Stage, Team, Rider, Participation, Exit) with natural primary keys, then built seven Tableau dashboards for OLAP-style exploration: Stage-in-Focus (top-10 riders per team, adjusted times), Speed as a Simple Ratio (km/h spread on mountain vs flat stages), Bonus / Penalties counterfactuals, Participation-by-Nation, National Outcomes (podium dominance by Slovenia, Belgium, Denmark), and Top-Ten Intensity by Team (Visma–Lease a Bike on top). Closing analysis benchmarks the normalized schema against a star-schema variant — measurable analytics speed-up, with the trade-off explicit.",
-    "tags": ["Tableau", "PostgreSQL", "Data Modelling", "OLAP", "Star Schema"],
-    "highlight": false,
-    "video": null,
-    "links": {
-      "github": null,
-      "demo": null
-    }
   }
 ]

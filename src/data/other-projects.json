@@ -1,5 +1,10 @@
 [
   {
+    "title": "Tour de France 2025 — Data Modelling & Tableau Dashboards",
+    "description": "End-to-end DB project for the Tour de France 2025. ER diagram → normalized 7-table PostgreSQL schema (Country, Location, Stage, Team, Rider, Participation, Exit) → seven Tableau dashboards for OLAP-style exploration covering rider/team performance, speed-by-stage-type, bonus/penalty counterfactuals, and national-level outcomes (Slovenia, Belgium, Denmark dominate the podium). Closing analysis benchmarks the normalized schema against a star-schema variant for analytics speed.",
+    "tags": ["Tableau", "PostgreSQL", "Data Modelling", "OLAP", "Star Schema"]
+  },
+  {
     "title": "Student Depression Classification",
     "description": "Cost-sensitive Gradient Boosting classifier for early identification of at-risk students. Compared glass-box (logistic regression, decision tree) and black-box (gradient boosting, random forest) models under both standard L2 and an alternative surrogate classification loss, then tuned the decision threshold by minimizing a cost-sensitive evaluation loss that penalizes missed depressed students. Achieved 98% recall on the held-out set; SHAP for global and local interpretability.",
     "tags": ["Gradient Boosting", "SHAP", "Cost-sensitive learning"]

@@ -1,10 +1,10 @@
 {
   "name": "Utkarsh Tyagi",
-  "role": "AI Engineer",
-  "tagline": "Building agentic AI systems and RAG pipelines that turn unstructured information into decisions people can act on.",
-  "about": "I'm an AI Engineer working at the intersection of large language models, retrieval, and applied ML. My focus is on agentic systems — multi-step pipelines where models make decisions, call tools, and pause for a human when their confidence drops. Currently building RAG-based investment intelligence at Mandala Capital, with prior experience deploying ML and analytics systems for Fortune 500 clients at Deloitte. Master's in Business Analytics from NUS, with a Computer Science background.",
+  "role": "AI & Data",
+  "tagline": "Curious about the AI and data space — building agentic systems and RAG pipelines that turn unstructured information into decisions people can act on.",
+  "about": "I'm someone deeply interested in the AI and data space — exploring how large language models, retrieval, and applied ML come together in real systems. My focus is on agentic workflows: multi-step pipelines where models make decisions, call tools, and pause for a human when their confidence drops. Currently building RAG-based investment intelligence at Mandala Capital, with prior experience deploying ML and analytics systems for Fortune 500 clients at Deloitte. Master's in Business Analytics from NUS, with a Computer Science background.",
   "location": "Singapore",
-  "email": "utyagi2012@gmail.com",
+  "email": "utkarsh.tyagi@u.nus.edu",
   "links": {
     "github": "https://github.com/UtkarshTyagi23",
     "linkedin": "https://www.linkedin.com/in/utkarsh-tyagi2305",
