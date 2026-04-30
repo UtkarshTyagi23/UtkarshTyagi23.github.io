@@ -1,10 +1,11 @@
 [
   {
     "slug": "kaki-care",
-    "title": "Kaki Care — Multimodal Agentic Health Companion",
-    "tagline": "Closed-loop agent orchestration with MeraLion + Sea-Lion LLMs for Type-2 diabetes management",
-    "description": "Singapore has one of the highest Type-2 diabetes prevalence rates in the developed world, and most patient-facing tooling is built for general populations — not for Singaporean dietary patterns, multilingual code-switching, or local healthcare workflows. Kaki Care is a multimodal agentic system that closes that gap. It pairs MeraLion and Sea-Lion (Southeast-Asia-trained LLMs) with a closed-loop agent orchestration layer — the agents handle meal-image analysis, medication adherence prompts, glucose-trend interpretation, and structured hand-off to the patient's care team when escalation is needed. The orchestration is the interesting piece: rather than a linear pipeline, agents call each other, share context, and self-correct based on the patient's actual response.",
-    "tags": ["Agentic AI", "Multimodal LLM", "MeraLion", "Sea-Lion", "Healthcare", "Singapore"],
+    "title": "Kaki Care — AI Diabetes Companion for Singapore",
+    "tagline": "Multilingual, voice-first, doctor-in-the-loop diabetes management for elderly patients on Telegram & WhatsApp",
+    "pullquote": "Reduced mean glucose by 29.4 mg/dL and cut high-risk events by 32% across a 100-patient, 60-day synthetic clinical trial (Mann–Whitney p < 0.001).",
+    "description": "Kaki Care is an AI health companion for Type-2 diabetes patients in Singapore — most of whom are elderly, code-switch between four languages, and eat hawker food that no global nutrition database knows about. Patients message the bot on Telegram or WhatsApp by text, voice note (English / 中文 / Bahasa Melayu / தமிழ்), or by uploading a prescription PDF. Voice flows through MERaLiON (the IMDA Singapore ASR API); response generation runs on SEA-LION; carb estimation falls through a verified chain of USDA → local hawker CSV → LLM estimate so the source is always auditable.\n\nThe orchestration is a LangGraph state machine with eight clinical nodes (memory → intake → metrics → RAG → clinician summary → policy → behavioural → escalation) plus persistent SQLite checkpoints for per-patient longitudinal state. Critically, the risk engine is deterministic — a hand-coded rules engine using ADA thresholds, never the LLM. The AI controls how warm the message sounds; it never decides what's safe. Hypoglycemia (<70 mg/dL) hard-blocks any exercise nudge; doctors are auto-escalated on a strict silence/risk matrix (e.g. critical risk + 30 min silence → page the doctor with a clinical summary, AI-drafted care plan, and citations from MIMIC-IV). Doctors approve, override, or call from the Telegram interrupt — the LangGraph thread resumes from the checkpoint.\n\nThe whole system is offline-first. If MERaLiON, SEA-LION, or USDA are unavailable, every agent gracefully degrades to deterministic templates and the safety guarantees still hold. Evaluated on a synthetic 50-treatment / 50-control RCT over 60 days; 677 tests in CI.",
+    "tags": ["LangGraph", "SEA-LION", "MERaLiON", "RAG", "Multilingual", "Telegram", "WhatsApp", "Healthcare AI", "Singapore"],
     "highlight": true,
     "video": null,
     "links": {
@@ -15,15 +16,12 @@
   {
     "slug": "vehicle-insurance",
     "title": "Vehicle Insurance Fraud Detection",
-    "tagline": "LangGraph-orchestrated multi-agent ML pipeline with LLM-generated explanations",
-    "description": "Production-style multi-agent system for predicting fraud probability on vehicle insurance claims. The pipeline runs as six discrete LangGraph nodes — preprocess → train → evaluate → select → infer → decide — each with a single, well-defined responsibility encoded as a Skill spec. SMOTE is applied only to the training fold to keep validation honest; three classifiers (Logistic Regression, Random Forest, XGBoost) are trained and the agent picks the best by validation AUC-ROC with a written justification. At inference time, the fraud-decision-engine agent calls OpenAI to turn the raw probability into a plain-English explanation and a recommended action for the claims officer — so the model output ends as a decision the human can act on, not a number on a dashboard.",
+    "tagline": "LangGraph multi-agent ML pipeline with LLM-generated explanations for claims officers",
+    "pullquote": "Six-node agent pipeline turns a fraud probability into a plain-English explanation and a recommended action — so the model output ends as a decision, not a number on a dashboard.",
+    "description": "Production-style multi-agent system for predicting fraud probability on vehicle insurance claims. The pipeline runs as six discrete LangGraph nodes — preprocess → train → evaluate → select → infer → decide — each with a single, well-defined responsibility encoded as a Skill spec. SMOTE is applied only to the training fold to keep validation honest; three classifiers (Logistic Regression, Random Forest, XGBoost) are trained and the agent picks the best by validation AUC-ROC with a written justification. At inference time, the fraud-decision-engine agent calls OpenAI to turn the raw probability into a plain-English explanation and a recommended action for the claims officer.",
     "tags": ["LangGraph", "Multi-agent", "XGBoost", "SMOTE", "OpenAI", "Gradio"],
     "highlight": false,
-    "video": {
-      "type": "mp4",
-      "src": "/videos/vehicle-insurance.mp4",
-      "poster": "/posters/vehicle-insurance.jpg"
-    },
+    "video": null,
     "links": {
       "github": "https://github.com/UtkarshTyagi23/Vehicle_Insurance",
       "demo": null
@@ -33,7 +31,8 @@
     "slug": "legal-contract-analysis",
     "title": "LexScan — Legal Clause Intelligence",
     "tagline": "Fine-tuned Legal-BERT over CUAD + GPT-4o-mini for plain-English risk grading",
-    "description": "Two-stage system that helps small business owners — who don't have in-house legal teams — make sense of contracts before signing. Stage 1: a fine-tuned Legal-BERT detects which of 38 commercial-contract clause types appear in an uploaded document, using sliding-window chunking (512 tokens, 75% overlap) and per-clause sigmoid threshold tuning to handle severe class imbalance (positive rates from 100% down to 2.5%). Stage 2: GPT-4o-mini locates the supporting excerpt, grades the clause's risk for the user's stated party role using a hand-written rubric (e.g. a cap-on-liability clause is benign for one side and catastrophic for the other), and explains it in plain English. Trained on CUAD (510 expert-annotated contracts), with macro-F1 ≥ 0.70 on the held-out test set — the operational threshold for trustworthy clause-level pre-screening.",
+    "pullquote": "Drops a 4-hour lawyer contract review to a 30-minute lawyer-in-the-loop triage at macro-F1 ≥ 0.70 across 38 commercial-clause types.",
+    "description": "Two-stage system that helps small business owners — who don't have in-house legal teams — make sense of contracts before signing. Stage 1: a fine-tuned Legal-BERT detects which of 38 commercial-contract clause types appear in an uploaded document, using sliding-window chunking (512 tokens, 75% overlap) and per-clause sigmoid threshold tuning to handle severe class imbalance (positive rates from 100% down to 2.5%). Stage 2: GPT-4o-mini locates the supporting excerpt, grades the clause's risk for the user's stated party role (a cap-on-liability clause is benign for one side and catastrophic for the other), and explains it in plain English. Trained on CUAD (510 expert-annotated contracts) — macro-F1 ≥ 0.70 on the held-out test set, the operational threshold for trustworthy clause-level pre-screening.",
     "tags": ["Legal-BERT", "Transformers", "Multi-label", "Flask", "GPT-4o-mini", "CUAD"],
     "highlight": false,
     "video": null,
@@ -45,8 +44,9 @@
   {
     "slug": "fintech-agentic-kyc",
     "title": "VerifyAI — Agentic KYC Onboarding",
-    "tagline": "Human-in-the-loop KYC with a natural-language explanation when the agent pauses",
-    "description": "Reframes a traditional KYC pipeline (OCR → parse → check sanctions → decide) as an agent loop. The agent runs verification autonomously, scores each signal with explicit confidence, and when the aggregate risk crosses the threshold it pauses, surfaces the flagged items with severity and confidence (e.g. address mismatch — 87%, partial PEP match — 42%), and produces a natural-language explanation of why it stopped. The compliance analyst gets two structured next actions — Approve anyway or Request more documents — and every override is logged with an audit reference. The prototype ships as a single-file HTML/Tailwind/JS demo so the flow can be walked through end-to-end without standing up the underlying OCR, sanctions-list, or LLM services.",
+    "tagline": "Human-in-the-loop KYC where the agent pauses with a natural-language explanation",
+    "pullquote": "When the aggregate risk score crosses the threshold, the agent stops, explains itself, and surfaces two structured next actions to the analyst — every override carries an audit reference.",
+    "description": "Reframes a traditional KYC pipeline (OCR → parse → check sanctions → decide) as an agent loop. The agent runs verification autonomously, scores each signal with explicit confidence, and when the aggregate risk crosses the threshold it pauses, surfaces flagged items with severity and confidence (e.g. address mismatch — 87%, partial PEP match — 42%), and produces a natural-language explanation of why it stopped. The compliance analyst gets two structured next actions — Approve anyway or Request more documents — and every override is logged with an audit reference. Ships as a single-file HTML/Tailwind/JS demo so the flow can be walked through end-to-end without standing up the underlying OCR, sanctions-list, or LLM services.",
     "tags": ["Agentic AI", "KYC", "Human-in-the-loop", "Tailwind", "Compliance"],
     "highlight": false,
     "video": null,
@@ -59,12 +59,27 @@
     "slug": "shark-tank-analysis",
     "title": "Shark Tank — Causal Analysis",
     "tagline": "PSM + DiD on 17 seasons to isolate the incremental effect of getting a deal",
-    "description": "Two-notebook causal study of Shark Tank US. The first notebook scrapes the public out-of-business and acquisition lists with BeautifulSoup, reconciles companies that changed names post-air, and augments the base panel with Google Trends search-interest series via pytrends. The second runs a full causal pipeline: descriptive analysis on a cleaned pre-COVID sample (929 firms) → Propensity Score Matching with logistic regression and 1-to-1 nearest-neighbour matching → an event study around episode air date for the publicity effect → PSM-DiD on the matched sample to isolate the incremental effect of receiving a deal — with exact matching, placebo tests, and season subsamples as robustness checks. Survival models (Kaplan-Meier, Cox PH, log-rank) are layered in for time-to-failure and time-to-acquisition.",
+    "pullquote": "Separates the publicity effect of appearing from the incremental effect of receiving a deal — quantified via PSM-DiD on a matched pre-COVID sample of 929 firms.",
+    "description": "Two-notebook causal study of Shark Tank US. The first notebook scrapes the public out-of-business and acquisition lists with BeautifulSoup, reconciles companies that changed names post-air, and augments the base panel with Google Trends search-interest series via pytrends. The second runs the full causal pipeline: descriptive analysis on a cleaned pre-COVID sample → Propensity Score Matching with logistic regression and 1-to-1 nearest-neighbour matching → an event study around episode air date for the publicity effect → PSM-DiD on the matched sample to isolate the incremental effect of receiving a deal — with exact matching, placebo tests, and season subsamples as robustness checks. Survival models (Kaplan–Meier, Cox PH, log-rank) are layered in for time-to-failure and time-to-acquisition.",
     "tags": ["PSM", "Difference-in-Differences", "Event Study", "Survival Analysis", "Causal Inference"],
     "highlight": false,
     "video": null,
     "links": {
       "github": "https://github.com/UtkarshTyagi23/Shark_Tank_Analysis",
+      "demo": null
+    }
+  },
+  {
+    "slug": "tour-de-france",
+    "title": "Tour de France 2025 — Data Modelling & Tableau Dashboards",
+    "tagline": "PostgreSQL schema + 7 OLAP-style Tableau dashboards over the 2025 race",
+    "pullquote": "End-to-end DB project: ER diagram → normalized PostgreSQL → star-schema variant for analytics — with Tableau dashboards surfacing rider, team, and national-level patterns.",
+    "description": "End-to-end data modelling project for the Tour de France 2025. Started from an ER diagram capturing every entity and constraint in the race domain, translated it into a normalized 7-table PostgreSQL schema (Country, Location, Stage, Team, Rider, Participation, Exit) with natural primary keys, then built seven Tableau dashboards for OLAP-style exploration: Stage-in-Focus (top-10 riders per team, adjusted times), Speed as a Simple Ratio (km/h spread on mountain vs flat stages), Bonus / Penalties counterfactuals, Participation-by-Nation, National Outcomes (podium dominance by Slovenia, Belgium, Denmark), and Top-Ten Intensity by Team (Visma–Lease a Bike on top). Closing analysis benchmarks the normalized schema against a star-schema variant — measurable analytics speed-up, with the trade-off explicit.",
+    "tags": ["Tableau", "PostgreSQL", "Data Modelling", "OLAP", "Star Schema"],
+    "highlight": false,
+    "video": null,
+    "links": {
+      "github": null,
       "demo": null
     }
   }
