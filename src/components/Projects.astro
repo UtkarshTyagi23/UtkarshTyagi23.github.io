@@ -1,9 +1,12 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 import projects from "../data/projects.json";
+
+const featured = projects.filter((p: any) => p.highlight);
+const rest = projects.filter((p: any) => !p.highlight);
 ---
 
-<section id="projects" class="relative py-20 sm:py-24">
+<section id="projects" class="relative py-20 sm:py-24 border-t border-white/5">
   <div class="max-w-5xl mx-auto px-6">
     <div class="mb-12 max-w-2xl">
       <p class="text-sm font-medium text-brand-400 mb-2 tracking-wide uppercase">
@@ -12,14 +15,21 @@ import projects from "../data/projects.json";
       <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
         Things I've built
       </h2>
-      <p class="mt-4 text-ink-400">
-        End-to-end ML systems with a usable front-end and a clear decision the
-        end user can act on. Each card includes a short video walkthrough.
+      <p class="mt-4 text-ink-400 leading-relaxed">
+        End-to-end systems where the model output ends as a decision a human can
+        act on — not a number on a dashboard. Where I have a demo recorded, it's
+        embedded inline; otherwise the source is on GitHub.
       </p>
     </div>
 
+    {featured.length > 0 && (
+      <div class="grid gap-6 mb-6">
+        {featured.map((p: any) => <ProjectCard project={p} />)}
+      </div>
+    )}
+
     <div class="grid sm:grid-cols-2 gap-6">
-      {projects.map((p: any) => <ProjectCard project={p} />)}
+      {rest.map((p: any) => <ProjectCard project={p} />)}
     </div>
   </div>
 </section>

@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "label": "AI & ML",
+      "items": [
+        "RAG Pipelines",
+        "Agentic Workflows",
+        "Prompt Engineering",
+        "MCP",
+        "LangGraph",
+        "LangChain",
+        "LlamaIndex",
+        "XGBoost",
+        "LightGBM",
+        "YOLO",
+        "Feature Engineering",
+        "Model Evaluation"
+      ]
+    },
+    {
+      "label": "Data & Languages",
+      "items": ["Python", "SQL", "PostgreSQL", "R"]
+    },
+    {
+      "label": "Infra & Deployment",
+      "items": [
+        "Qdrant",
+        "GCP",
+        "Apache Kafka",
+        "Docker",
+        "REST APIs",
+        "Pipeline Orchestration",
+        "Tableau"
+      ]
+    },
+    {
+      "label": "Coursework",
+      "items": [
+        "Agentic AI — Andrew Ng (multi-agent, MCP, evals)",
+        "RAG Systems — Zain Hassan (hybrid search, Weaviate)"
+      ]
+    }
+  ]
+}

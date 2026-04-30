@@ -1,0 +1,18 @@
+[
+  {
+    "school": "NUS Business School, National University of Singapore",
+    "degree": "Master of Science in Business Analytics",
+    "location": "Singapore",
+    "period": "Jul 2025 — Present",
+    "current": true,
+    "notes": "Focus on agentic AI, applied ML, and causal inference. Coursework includes multi-agent systems with MCP, RAG architectures, and quasi-experimental methods (PSM, DiD, IV/2SLS)."
+  },
+  {
+    "school": "G.L. Bajaj Institute of Technology and Management",
+    "degree": "Bachelor of Technology — Computer Science & Engineering",
+    "location": "India",
+    "period": "Aug 2016 — Sep 2020",
+    "current": false,
+    "notes": "Foundational CS — algorithms, systems, databases, distributed computing."
+  }
+]

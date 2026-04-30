@@ -30,31 +30,49 @@ public/
 
 ## Adding or swapping a project
 
-1. **Drop the demo video** into `public/videos/` — e.g. `vehicle-insurance.mp4`.
-2. **(Optional)** drop a poster image into `public/posters/` with the same base
-   name — e.g. `vehicle-insurance.jpg`. This is what shows before the user
-   hits play.
-3. **Edit `src/data/projects.json`** and add or update the entry:
+A project entry in `src/data/projects.json` looks like this:
 
+```json
+{
+  "slug": "my-new-project",
+  "title": "My New Project",
+  "tagline": "One-line hook",
+  "description": "A paragraph or two.",
+  "tags": ["Tag1", "Tag2"],
+  "highlight": false,
+  "video": {
+    "type": "mp4",
+    "src": "/videos/my-new-project.mp4",
+    "poster": "/posters/my-new-project.jpg"
+  },
+  "links": {
+    "github": "https://github.com/UtkarshTyagi23/MyRepo",
+    "demo": null
+  }
+}
+```
+
+- `video` is **optional** — set it to `null` to render a styled gradient
+  header with the project's initials instead of a video. The card still shows
+  the title, tagline, description, tags, and links.
+- `highlight: true` pulls the project to the top as a full-width "featured"
+  card with a glow border. Use sparingly — one or two at most.
+- `links.github` and `links.demo` are both optional. Leave either as `null` to
+  hide the corresponding button.
+
+### Adding a video to a project that doesn't have one
+
+1. **Drop the MP4** into `public/videos/` — e.g. `vehicle-insurance.mp4`.
+2. **(Optional)** drop a poster JPG into `public/posters/` with the same base
+   name. If skipped, the browser uses the first frame.
+3. **Edit `src/data/projects.json`** — change the entry's `video: null` to:
    ```json
-   {
-     "slug": "my-new-project",
-     "title": "My New Project",
-     "tagline": "One-line hook",
-     "description": "A paragraph or two.",
-     "tags": ["Tag1", "Tag2"],
-     "video": {
-       "type": "mp4",
-       "src": "/videos/my-new-project.mp4",
-       "poster": "/posters/my-new-project.jpg"
-     },
-     "links": {
-       "github": "https://github.com/UtkarshTyagi23/MyRepo",
-       "demo": null
-     }
+   "video": {
+     "type": "mp4",
+     "src": "/videos/vehicle-insurance.mp4",
+     "poster": "/posters/vehicle-insurance.jpg"
    }
    ```
-
 4. Commit + push. The GitHub Action rebuilds and redeploys automatically.
 
 ### Using a YouTube video instead of an MP4

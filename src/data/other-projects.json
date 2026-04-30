@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Student Depression Classification",
+    "description": "Cost-sensitive Gradient Boosting classifier for early identification of at-risk students. Compared glass-box (logistic regression, decision tree) and black-box (gradient boosting, random forest) models under both standard L2 and an alternative surrogate classification loss, then tuned the decision threshold by minimizing a cost-sensitive evaluation loss that penalizes missed depressed students. Achieved 98% recall on the held-out set; SHAP for global and local interpretability.",
+    "tags": ["Gradient Boosting", "SHAP", "Cost-sensitive learning"]
+  },
+  {
+    "title": "Portfolio Backtesting — LASSO & Ridge",
+    "description": "Used a portfolio-optimization framing to study overfitting in linear regression on high-dimensional financial data (100 daily-asset portfolios). Implemented Markowitz minimum-variance allocation, then re-cast it as a regression problem and compared LASSO and Ridge regularization in a rolling-window backtest (126-day train, 1-day test) to quantify the out-of-sample penalty of overfitting an unregularized covariance estimate.",
+    "tags": ["LASSO", "Ridge", "Regularization", "Backtesting"]
+  },
+  {
+    "title": "PizzaHub Pricing Strategy — IV / 2SLS",
+    "description": "Estimated regional demand functions for a food-delivery business using instrumental variables and two-stage least squares to isolate price elasticity from confounded discount campaigns. Validated OLS assumptions with Hausman tests and a battery of robustness checks, then translated the estimated elasticities into profit-maximizing pricing recommendations for two test regions.",
+    "tags": ["IV / 2SLS", "Hausman test", "Demand estimation"]
+  },
+  {
+    "title": "Reflective Multi-Agent Work Reporting System",
+    "description": "Multi-agent system where specialised agents (collector, summarizer, critic, writer) draft and refine a weekly work report, then a reflection agent critiques the draft and triggers a re-write loop until quality criteria are met. Tests how well closed-loop self-critique improves output quality on a real productivity task.",
+    "tags": ["Agentic AI", "Self-reflection", "Multi-agent"]
+  }
+]

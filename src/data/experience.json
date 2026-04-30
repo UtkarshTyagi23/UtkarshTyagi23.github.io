@@ -1,0 +1,39 @@
+[
+  {
+    "company": "Mandala Capital",
+    "role": "AI Intern",
+    "location": "Singapore",
+    "period": "Apr 2026 — Present",
+    "current": true,
+    "bullets": [
+      "Building a RAG-based financial document intelligence system that lets the investment team run semantic search and signal extraction across years of unstructured PE deal memos, sector reports, and meeting notes.",
+      "Designing scalable retrieval pipelines on vector databases — hybrid semantic + keyword search to surface historically relevant deals during live evaluation, cutting time-to-context from hours to minutes.",
+      "Automating internal investment workflows with agentic AI — the agent drafts initial deal screens, flags portfolio overlaps, and routes the analyst directly to the relevant precedent."
+    ]
+  },
+  {
+    "company": "Deloitte",
+    "role": "Analyst",
+    "location": "Gurgaon, India",
+    "period": "Mar 2022 — May 2024",
+    "current": false,
+    "bullets": [
+      "Led the analytics transformation of Enterprise Asset Management (EAM) systems for Oil & Gas, Aviation, and Healthcare clients — deployed ML models that improved operational efficiency by 10%.",
+      "Integrated real-time telemetry pipelines with HxGN EAM Databridge Pro and Apache Kafka, building the underlying datasets for downstream predictive maintenance models.",
+      "Built and shipped 15+ SQL and Tableau dashboards, reducing reporting latency by 40% and moving clients from reactive reporting to proactive asset-health monitoring.",
+      "Mentored 3 junior analysts — accelerated their onboarding and improved overall team throughput."
+    ]
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "role": "Associate System Engineer",
+    "location": "Mumbai, India",
+    "period": "Nov 2020 — Mar 2022",
+    "current": false,
+    "bullets": [
+      "Engineered SQL-based automation pipelines for financial and regulatory reporting, accelerating period-end close.",
+      "Led data quality initiatives using Posidex and fuzzy matching for deduplication — improved underlying data accuracy by 30%.",
+      "Performed foundational EDA on cloud workload patterns to optimize resource allocation, cutting infrastructure costs by 25%."
+    ]
+  }
+]

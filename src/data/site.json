@@ -1,8 +1,8 @@
 {
   "name": "Utkarsh Tyagi",
-  "role": "ML & Data Science",
-  "tagline": "Building ML systems that turn messy real-world data into decisions people can act on.",
-  "about": "I work on applied ML and causal inference — multi-agent pipelines for fraud detection, transformer-based legal NLP, and quasi-experimental analysis of business outcomes. Currently focused on agentic systems that pair model predictions with LLM-generated explanations a non-technical user can actually use.",
+  "role": "AI Engineer",
+  "tagline": "Building agentic AI systems and RAG pipelines that turn unstructured information into decisions people can act on.",
+  "about": "I'm an AI Engineer working at the intersection of large language models, retrieval, and applied ML. My focus is on agentic systems — multi-step pipelines where models make decisions, call tools, and pause for a human when their confidence drops. Currently building RAG-based investment intelligence at Mandala Capital, with prior experience deploying ML and analytics systems for Fortune 500 clients at Deloitte. Master's in Business Analytics from NUS, with a Computer Science background.",
   "location": "Singapore",
   "email": "utyagi2012@gmail.com",
   "links": {

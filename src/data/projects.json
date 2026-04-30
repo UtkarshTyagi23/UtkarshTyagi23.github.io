@@ -1,10 +1,24 @@
 [
   {
+    "slug": "kaki-care",
+    "title": "Kaki Care — Multimodal Agentic Health Companion",
+    "tagline": "Closed-loop agent orchestration with MeraLion + Sea-Lion LLMs for Type-2 diabetes management",
+    "description": "Singapore has one of the highest Type-2 diabetes prevalence rates in the developed world, and most patient-facing tooling is built for general populations — not for Singaporean dietary patterns, multilingual code-switching, or local healthcare workflows. Kaki Care is a multimodal agentic system that closes that gap. It pairs MeraLion and Sea-Lion (Southeast-Asia-trained LLMs) with a closed-loop agent orchestration layer — the agents handle meal-image analysis, medication adherence prompts, glucose-trend interpretation, and structured hand-off to the patient's care team when escalation is needed. The orchestration is the interesting piece: rather than a linear pipeline, agents call each other, share context, and self-correct based on the patient's actual response.",
+    "tags": ["Agentic AI", "Multimodal LLM", "MeraLion", "Sea-Lion", "Healthcare", "Singapore"],
+    "highlight": true,
+    "video": null,
+    "links": {
+      "github": null,
+      "demo": null
+    }
+  },
+  {
     "slug": "vehicle-insurance",
     "title": "Vehicle Insurance Fraud Detection",
-    "tagline": "Multi-agent ML pipeline for claim-level fraud probability",
-    "description": "LangGraph-orchestrated pipeline (preprocess → train → evaluate → select → infer → decide) over the Vehicle Insurance Fraud dataset. Three classifiers (LR / RF / XGBoost) with SMOTE on the training fold only; an OpenAI call turns the score into a plain-English explanation and a recommended action for the claims officer.",
-    "tags": ["LangGraph", "XGBoost", "SMOTE", "OpenAI", "Gradio"],
+    "tagline": "LangGraph-orchestrated multi-agent ML pipeline with LLM-generated explanations",
+    "description": "Production-style multi-agent system for predicting fraud probability on vehicle insurance claims. The pipeline runs as six discrete LangGraph nodes — preprocess → train → evaluate → select → infer → decide — each with a single, well-defined responsibility encoded as a Skill spec. SMOTE is applied only to the training fold to keep validation honest; three classifiers (Logistic Regression, Random Forest, XGBoost) are trained and the agent picks the best by validation AUC-ROC with a written justification. At inference time, the fraud-decision-engine agent calls OpenAI to turn the raw probability into a plain-English explanation and a recommended action for the claims officer — so the model output ends as a decision the human can act on, not a number on a dashboard.",
+    "tags": ["LangGraph", "Multi-agent", "XGBoost", "SMOTE", "OpenAI", "Gradio"],
+    "highlight": false,
     "video": {
       "type": "mp4",
       "src": "/videos/vehicle-insurance.mp4",
@@ -18,48 +32,39 @@
   {
     "slug": "legal-contract-analysis",
     "title": "LexScan — Legal Clause Intelligence",
-    "tagline": "Fine-tuned Legal-BERT classifier over 38 CUAD clause types",
-    "description": "Two-stage system: a fine-tuned Legal-BERT detects which contract clauses are present in an uploaded document with per-clause threshold tuning; GPT-4o-mini then locates the supporting excerpt, grades its risk for the user's party role, and explains it in plain English. Macro-F1 ≥ 0.70 on held-out CUAD contracts.",
-    "tags": ["Legal-BERT", "Transformers", "Flask", "GPT-4o-mini", "CUAD"],
-    "video": {
-      "type": "mp4",
-      "src": "/videos/legal-contract-analysis.mp4",
-      "poster": "/posters/legal-contract-analysis.jpg"
-    },
+    "tagline": "Fine-tuned Legal-BERT over CUAD + GPT-4o-mini for plain-English risk grading",
+    "description": "Two-stage system that helps small business owners — who don't have in-house legal teams — make sense of contracts before signing. Stage 1: a fine-tuned Legal-BERT detects which of 38 commercial-contract clause types appear in an uploaded document, using sliding-window chunking (512 tokens, 75% overlap) and per-clause sigmoid threshold tuning to handle severe class imbalance (positive rates from 100% down to 2.5%). Stage 2: GPT-4o-mini locates the supporting excerpt, grades the clause's risk for the user's stated party role using a hand-written rubric (e.g. a cap-on-liability clause is benign for one side and catastrophic for the other), and explains it in plain English. Trained on CUAD (510 expert-annotated contracts), with macro-F1 ≥ 0.70 on the held-out test set — the operational threshold for trustworthy clause-level pre-screening.",
+    "tags": ["Legal-BERT", "Transformers", "Multi-label", "Flask", "GPT-4o-mini", "CUAD"],
+    "highlight": false,
+    "video": null,
     "links": {
       "github": "https://github.com/UtkarshTyagi23/LegalContract_Analysis",
       "demo": null
     }
   },
   {
-    "slug": "shark-tank-analysis",
-    "title": "Shark Tank — Causal Analysis",
-    "tagline": "PSM + DiD on 17 seasons of Shark Tank US",
-    "description": "Two-notebook study: scrapes the out-of-business and acquisition lists, augments the base panel with Google Trends, then runs Propensity Score Matching, an event study around episode air date, and a PSM-DiD on the matched sample to isolate the incremental effect of receiving a deal — with placebo and exact-matching robustness.",
-    "tags": ["PSM", "Difference-in-Differences", "Event Study", "lifelines", "BeautifulSoup"],
-    "video": {
-      "type": "mp4",
-      "src": "/videos/shark-tank-analysis.mp4",
-      "poster": "/posters/shark-tank-analysis.jpg"
-    },
+    "slug": "fintech-agentic-kyc",
+    "title": "VerifyAI — Agentic KYC Onboarding",
+    "tagline": "Human-in-the-loop KYC with a natural-language explanation when the agent pauses",
+    "description": "Reframes a traditional KYC pipeline (OCR → parse → check sanctions → decide) as an agent loop. The agent runs verification autonomously, scores each signal with explicit confidence, and when the aggregate risk crosses the threshold it pauses, surfaces the flagged items with severity and confidence (e.g. address mismatch — 87%, partial PEP match — 42%), and produces a natural-language explanation of why it stopped. The compliance analyst gets two structured next actions — Approve anyway or Request more documents — and every override is logged with an audit reference. The prototype ships as a single-file HTML/Tailwind/JS demo so the flow can be walked through end-to-end without standing up the underlying OCR, sanctions-list, or LLM services.",
+    "tags": ["Agentic AI", "KYC", "Human-in-the-loop", "Tailwind", "Compliance"],
+    "highlight": false,
+    "video": null,
     "links": {
-      "github": "https://github.com/UtkarshTyagi23/Shark_Tank_Analysis",
+      "github": "https://github.com/UtkarshTyagi23/Fintech_AgenticKyc",
       "demo": null
     }
   },
   {
-    "slug": "fintech-agentic-kyc",
-    "title": "VerifyAI — Agentic KYC Onboarding",
-    "tagline": "Human-in-the-loop KYC pipeline driven by an autonomous agent",
-    "description": "A clickable single-page mockup of a four-screen agentic KYC flow. The agent runs OCR, authenticity, and sanctions/PEP checks autonomously, then pauses with a natural-language explanation and structured options for a compliance analyst when its confidence drops. Audit reference is recorded for every override.",
-    "tags": ["Agentic AI", "KYC", "Human-in-the-loop", "Tailwind", "Prototype"],
-    "video": {
-      "type": "mp4",
-      "src": "/videos/fintech-agentic-kyc.mp4",
-      "poster": "/posters/fintech-agentic-kyc.jpg"
-    },
+    "slug": "shark-tank-analysis",
+    "title": "Shark Tank — Causal Analysis",
+    "tagline": "PSM + DiD on 17 seasons to isolate the incremental effect of getting a deal",
+    "description": "Two-notebook causal study of Shark Tank US. The first notebook scrapes the public out-of-business and acquisition lists with BeautifulSoup, reconciles companies that changed names post-air, and augments the base panel with Google Trends search-interest series via pytrends. The second runs a full causal pipeline: descriptive analysis on a cleaned pre-COVID sample (929 firms) → Propensity Score Matching with logistic regression and 1-to-1 nearest-neighbour matching → an event study around episode air date for the publicity effect → PSM-DiD on the matched sample to isolate the incremental effect of receiving a deal — with exact matching, placebo tests, and season subsamples as robustness checks. Survival models (Kaplan-Meier, Cox PH, log-rank) are layered in for time-to-failure and time-to-acquisition.",
+    "tags": ["PSM", "Difference-in-Differences", "Event Study", "Survival Analysis", "Causal Inference"],
+    "highlight": false,
+    "video": null,
     "links": {
-      "github": "https://github.com/UtkarshTyagi23/Fintech_AgenticKyc",
+      "github": "https://github.com/UtkarshTyagi23/Shark_Tank_Analysis",
       "demo": null
     }
   }
