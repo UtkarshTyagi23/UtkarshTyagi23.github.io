@@ -7,7 +7,10 @@
     "description": "Kaki Care is an AI health companion for Type-2 diabetes patients in Singapore — most of whom are elderly, code-switch between four languages, and eat hawker food that no global nutrition database knows about. Patients message the bot on Telegram or WhatsApp by text, voice note (English / 中文 / Bahasa Melayu / தமிழ்), or by uploading a prescription PDF. Voice flows through MERaLiON (the IMDA Singapore ASR API); response generation runs on SEA-LION; carb estimation falls through a verified chain of USDA → local hawker CSV → LLM estimate so the source is always auditable.\n\nThe orchestration is a LangGraph state machine with eight clinical nodes (memory → intake → metrics → RAG → clinician summary → policy → behavioural → escalation) plus persistent SQLite checkpoints for per-patient longitudinal state. Critically, the risk engine is deterministic — a hand-coded rules engine using ADA thresholds, never the LLM. The AI controls how warm the message sounds; it never decides what's safe. Hypoglycemia (<70 mg/dL) hard-blocks any exercise nudge; doctors are auto-escalated on a strict silence/risk matrix (e.g. critical risk + 30 min silence → page the doctor with a clinical summary, AI-drafted care plan, and citations from MIMIC-IV). Doctors approve, override, or call from the Telegram interrupt — the LangGraph thread resumes from the checkpoint.\n\nThe whole system is offline-first. If MERaLiON, SEA-LION, or USDA are unavailable, every agent gracefully degrades to deterministic templates and the safety guarantees still hold. Evaluated on a synthetic 50-treatment / 50-control RCT over 60 days; 677 tests in CI.",
     "tags": ["LangGraph", "SEA-LION", "MERaLiON", "RAG", "Multilingual", "Telegram", "WhatsApp", "Healthcare AI", "Singapore"],
     "highlight": true,
-    "video": null,
+    "video": {
+      "type": "youtube",
+      "src": "https://youtu.be/_sNYvKsean4"
+    },
     "links": {
       "github": null,
       "demo": null
