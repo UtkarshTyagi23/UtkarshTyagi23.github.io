@@ -35,7 +35,10 @@
     "description": "Two-stage system that helps small business owners — who don't have in-house legal teams — make sense of contracts before signing. Stage 1: a fine-tuned Legal-BERT detects which of 38 commercial-contract clause types appear in an uploaded document, using sliding-window chunking (512 tokens, 75% overlap) and per-clause sigmoid threshold tuning to handle severe class imbalance (positive rates from 100% down to 2.5%). Stage 2: GPT-4o-mini locates the supporting excerpt, grades the clause's risk for the user's stated party role (a cap-on-liability clause is benign for one side and catastrophic for the other), and explains it in plain English. Trained on CUAD (510 expert-annotated contracts) — macro-F1 ≥ 0.70 on the held-out test set, the operational threshold for trustworthy clause-level pre-screening.",
     "tags": ["Legal-BERT", "Transformers", "Multi-label", "Flask", "GPT-4o-mini", "CUAD"],
     "highlight": false,
-    "video": null,
+    "video": {
+      "type": "youtube",
+      "src": "https://youtu.be/3VlzjBy9gGk"
+    },
     "links": {
       "github": "https://github.com/UtkarshTyagi23/LegalContract_Analysis",
       "demo": null
