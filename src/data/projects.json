@@ -21,7 +21,10 @@
     "description": "Production-style multi-agent system for predicting fraud probability on vehicle insurance claims. The pipeline runs as six discrete LangGraph nodes — preprocess → train → evaluate → select → infer → decide — each with a single, well-defined responsibility encoded as a Skill spec. SMOTE is applied only to the training fold to keep validation honest; three classifiers (Logistic Regression, Random Forest, XGBoost) are trained and the agent picks the best by validation AUC-ROC with a written justification. At inference time, the fraud-decision-engine agent calls OpenAI to turn the raw probability into a plain-English explanation and a recommended action for the claims officer.",
     "tags": ["LangGraph", "Multi-agent", "XGBoost", "SMOTE", "OpenAI", "Gradio"],
     "highlight": false,
-    "video": null,
+    "video": {
+      "type": "youtube",
+      "src": "https://youtu.be/1-2DLSqslzA"
+    },
     "links": {
       "github": "https://github.com/UtkarshTyagi23/Vehicle_Insurance",
       "demo": null
