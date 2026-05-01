@@ -52,7 +52,10 @@
     "description": "Reframes a traditional KYC pipeline (OCR → parse → check sanctions → decide) as an agent loop. The agent runs verification autonomously, scores each signal with explicit confidence, and when the aggregate risk crosses the threshold it pauses, surfaces flagged items with severity and confidence (e.g. address mismatch — 87%, partial PEP match — 42%), and produces a natural-language explanation of why it stopped. The compliance analyst gets two structured next actions — Approve anyway or Request more documents — and every override is logged with an audit reference. Ships as a single-file HTML/Tailwind/JS demo so the flow can be walked through end-to-end without standing up the underlying OCR, sanctions-list, or LLM services.",
     "tags": ["Agentic AI", "KYC", "Human-in-the-loop", "Tailwind", "Compliance"],
     "highlight": false,
-    "video": null,
+    "video": {
+      "type": "youtube",
+      "src": "https://youtu.be/3PdAnQsB7Mg"
+    },
     "links": {
       "github": "https://github.com/UtkarshTyagi23/Fintech_AgenticKyc",
       "demo": null
